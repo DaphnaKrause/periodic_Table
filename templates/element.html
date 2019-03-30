@@ -1,0 +1,40 @@
+{% extends 'bootstrap/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block content %}
+<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
+<div class="jumbotron container-fluid" style= "border-style:solid; border-color:#{{ elem['hex_color'] }};">
+	<h1 class="display-4"> {{ elem['letter'] }} for {{ elem['name'] }}</h1>
+	<div style= "border-style:dotted; border-color:#{{ elem['hex_color'] }};">
+	<h2 class="display-5">Atomic Number: {{ elem['atomic_number'] }}</h2>
+</div>
+
+<div>
+<h3 class="display-7">
+	<ul>
+		<li><strong>Standard State: </strong>{{ elem['standard_state'] }}</li>
+		<li><strong>Bonding Type: </strong>{{ elem['bonding_type'] }}</li>
+		<li><strong>Metal or Nonmetal: </strong>{{ elem['metal_or_nonmetal?'] }}</li>
+		<li><strong>Year Discovered: </strong>{{ elem['year_discovered'] }}</li>
+  </ul>
+</h3>
+</div>
+
+<div class="card" style= "border-style:solid; border-color:#{{ elem['hex_color'] }};">
+	<h3 class="display-6">Periodic Table Of Elements</p>
+	<a title="Dmarcus100 [CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0)], via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Periodic_Table_Of_Elements.svg"><img width="512" alt="Periodic Table Of Elements" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Periodic_Table_Of_Elements.svg/512px-Periodic_Table_Of_Elements.svg.png"></a>
+</div>
+
+<div>
+<p></p>
+<p class="card" style= "border-style:solid; border-color:#{{ elem['hex_color'] }};">Fun Fact: The border color around these boxes corresponds to the elements color. </p>
+</div>
+
+	<!-- NOTE the way to link to a route: Use the function name -->
+	<div class="card" style= "border-style:solid; border-color:#{{ elem['hex_color'] }};"><p></p>
+		<p><a href="{{ url_for('index') }}">Return to the list</a> to select a different element.</p>
+	</div>
+</div>
+
+{% endblock %}

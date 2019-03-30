@@ -1,0 +1,32 @@
+{% extends 'bootstrap/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block content %}
+<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
+<div class="jumbotron">
+<h1 class="display-4">The Periodic Table of Elements</h1>
+
+<h2 class="display-7">Click on any of the Elements.</h2>
+
+<!-- pairs is a list that must be sent here by a route function
+
+     The list will contain 118 pairs: a element number, and a
+     elements's name -->
+
+     <!--       later editing change         -->
+     <!--  url_for( 'detail', num=pair[0] )  -->
+     <!--    inside double curly braces      -->
+
+    <ol>
+    {% for pair in pairs %}
+
+       <h3 class="display-6">
+         <li><a href="{{ url_for( 'detail', num=pair[0] ) }}">{{ pair[1] }}</a></li>
+       </h3>
+
+    {% endfor %}
+  </ol>
+
+</div>
+{% endblock %}

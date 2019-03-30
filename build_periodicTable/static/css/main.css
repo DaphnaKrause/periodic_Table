@@ -1,0 +1,49 @@
+* { box-sizing: border-box; }
+
+
+body {
+  background: #84939B;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1500px;
+  font-family: 'Nunito', sans-serif;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 18rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+div {
+    padding: 2;
+}
+
+h1 {
+    margin: 1;
+}
+
+
+img {
+	display: block;
+	margin: auto;
+	max-width: 100%;
+}
+
+
+/* links */
+
+a {
+    color: #507182;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #06547c;
+    text-decoration: none;
+}
